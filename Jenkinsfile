@@ -11,12 +11,6 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sk12k/sl-26Sep-25Oct.git']]])
             }
         }
-        stage('Deploy') {
-            steps {
-                sh '''cd /tmp
-                ./deploy.sh'''
-            }
-        }
     }
 }
 
